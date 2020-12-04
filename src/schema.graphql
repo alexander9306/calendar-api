@@ -40,6 +40,15 @@ type Speaker {
   updatedAt: DateTime!
 }
 
+type Event {
+  id: ID!
+  name: String!
+  description: String
+  date: DateTime!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
 type Query {
   cars: [Car!]!
   car(id: ID!): Car!
@@ -47,6 +56,8 @@ type Query {
   shirt(id: ID!): Shirt!
   speakers: [Speaker!]!
   speaker(id: ID!): Speaker!
+  events: [Event!]!
+  event(id: ID!): Event!
 }
 
 type Mutation {
@@ -59,6 +70,9 @@ type Mutation {
   createSpeaker(createSpeakerInput: CreateSpeakerInput!): Speaker!
   updateSpeaker(updateSpeakerInput: UpdateSpeakerInput!): Speaker!
   removeSpeaker(id: ID!): Speaker!
+  createEvent(createEventInput: CreateEventInput!): Event!
+  updateEvent(updateEventInput: UpdateEventInput!): Event!
+  removeEvent(id: ID!): Event!
 }
 
 input CreateCarInput {
@@ -97,5 +111,18 @@ input UpdateSpeakerInput {
   brand: String
   model: String
   power: Int
+  id: ID!
+}
+
+input CreateEventInput {
+  name: String!
+  description: String!
+  date: DateTime!
+}
+
+input UpdateEventInput {
+  name: String
+  description: String
+  date: DateTime
   id: ID!
 }

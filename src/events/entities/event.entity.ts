@@ -23,7 +23,7 @@ export class Event {
   @Column({
     length: 255,
   })
-  @Field()
+  @Field(() => String, { nullable: true })
   description?: string;
 
   @Column()
