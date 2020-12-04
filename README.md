@@ -1,6 +1,6 @@
 ## Description
 
-Products API made with TypeScript.
+Calendar API
 
 ## Installation
 
