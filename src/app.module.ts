@@ -3,9 +3,6 @@ import { GraphQLModule } from "@nestjs/graphql";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { join } from "path";
 import { ConfigModule } from "@nestjs/config";
-import { CarsModule } from "./cars/cars.module";
-import { ShirtsModule } from "./shirts/shirts.module";
-import { SpeakersModule } from "./speakers/speakers.module";
 import { EventsModule } from "./events/events.module";
 
 @Module({
@@ -20,11 +17,8 @@ import { EventsModule } from "./events/events.module";
     GraphQLModule.forRoot({
       autoSchemaFile: join(process.cwd(), "src/schema.graphql"),
       debug: false,
-      playground: true,
+      playground: process.env.NODE_ENV === "development",
     }),
-    CarsModule,
-    ShirtsModule,
-    SpeakersModule,
     EventsModule,
   ],
 })

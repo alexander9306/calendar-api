@@ -22,9 +22,10 @@ export class Event {
 
   @Column({
     length: 255,
+    nullable: true,
   })
   @Field(() => String, { nullable: true })
-  description?: string;
+  description?: string | null;
 
   @Column()
   @Field(() => Date)

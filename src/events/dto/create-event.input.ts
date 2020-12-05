@@ -5,8 +5,8 @@ export class CreateEventInput {
   @Field()
   name: string;
 
-  @Field()
-  description?: string;
+  @Field(() => String, { nullable: true })
+  description?: string | null;
 
   @Field(() => Date)
   date: Date;
