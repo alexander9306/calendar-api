@@ -35,6 +35,8 @@ module.exports = {
         devDependencies: [
           "**/*.test.js",
           "**/*.spec.js",
+          "**/*.e2e-spec.js",
+          "**/*.e2e-spec.ts",
           "**/*.test.ts",
           "**/*.spec.ts",
         ],

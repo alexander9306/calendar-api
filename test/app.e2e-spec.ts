@@ -15,7 +15,7 @@ describe("AppController (e2e)", () => {
     await app.init();
   });
 
-  it("/ (GET)", () => {
-    return request(app.getHttpServer()).get("/graphql").expect(200);
+  test("/ (GET) / confirm root endpoint is returning a Not found if accessing ", () => {
+    return request(app.getHttpServer()).get("/").expect(404);
   });
 });
