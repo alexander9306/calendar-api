@@ -387,5 +387,11 @@ Temporary Items
 
 =======
 # Local
-.env
 dist
+
+
+# dotenv environment variables file
+.env
+.env.development
+.env.production
+.env.test
