@@ -38,7 +38,7 @@ describe("EventsResolver", () => {
     const result = await resolver.createEvent({
       name: "Night Club",
       description: "Meeting Francisco at the night club.",
-      date: new Date(""),
+      date: new Date(),
     });
     expect(result.name).toBe("Night Club");
   });
