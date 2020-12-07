@@ -1,7 +1,10 @@
-import { InputType, Field } from "@nestjs/graphql";
+import { InputType, Field, ID } from "@nestjs/graphql";
 
 @InputType()
 export class CreateEventInput {
+  @Field(() => ID)
+  id: string;
+
   @Field()
   name: string;
 
@@ -9,5 +12,8 @@ export class CreateEventInput {
   description?: string | null;
 
   @Field(() => Date)
-  date: Date;
+  start: Date;
+
+  @Field(() => Date)
+  end: Date;
 }

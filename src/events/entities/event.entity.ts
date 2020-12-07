@@ -2,7 +2,7 @@ import { ObjectType, Field, ID } from "@nestjs/graphql";
 import {
   Entity,
   Column,
-  PrimaryGeneratedColumn,
+  PrimaryColumn,
   CreateDateColumn,
   UpdateDateColumn,
 } from "typeorm";
@@ -10,7 +10,7 @@ import {
 @ObjectType()
 @Entity()
 export class Event {
-  @PrimaryGeneratedColumn("uuid")
+  @PrimaryColumn()
   @Field(() => ID)
   id: string;
 
@@ -29,7 +29,11 @@ export class Event {
 
   @Column()
   @Field(() => Date)
-  date: Date;
+  start: Date;
+
+  @Column()
+  @Field(() => Date)
+  end: Date;
 
   @CreateDateColumn({ name: "created_at" })
   @Field(() => Date)

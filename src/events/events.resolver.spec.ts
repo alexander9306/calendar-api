@@ -9,10 +9,11 @@ describe("EventsResolver", () => {
     async create(event) {
       const date = new Date("2020-11-10T16:15:41.030Z");
       return {
-        id: "1",
+        id: event.id,
         name: event.name,
         description: event.description,
-        date: event.date,
+        start: event.start,
+        end: event.end,
         createdAt: date,
         updatedAt: date,
       };
@@ -36,9 +37,11 @@ describe("EventsResolver", () => {
 
   it("Should return the created date with the name that is passed", async () => {
     const result = await resolver.createEvent({
+      id: "01",
       name: "Night Club",
       description: "Meeting Francisco at the night club.",
-      date: new Date(),
+      start: new Date(),
+      end: new Date(),
     });
     expect(result.name).toBe("Night Club");
   });

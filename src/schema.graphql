@@ -6,7 +6,8 @@ type Event {
   id: ID!
   name: String!
   description: String
-  date: DateTime!
+  start: DateTime!
+  end: DateTime!
   createdAt: DateTime!
   updatedAt: DateTime!
 }
@@ -28,14 +29,17 @@ type Mutation {
 }
 
 input CreateEventInput {
+  id: ID!
   name: String!
   description: String
-  date: DateTime!
+  start: DateTime!
+  end: DateTime!
 }
 
 input UpdateEventInput {
+  id: ID!
   name: String
   description: String
-  date: DateTime
-  id: ID!
+  start: DateTime
+  end: DateTime
 }
